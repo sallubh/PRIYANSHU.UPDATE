@@ -40,7 +40,7 @@ module.exports.config = {
   name: "music",
   version: "1.2.0",
   hasPermssion: 0,
-  credits: "ARIF BABU 🙂",
+  credits: "Uziar Rajput",
   description: "Download and play music from YouTube",
   commandCategory: "media",
   usages: "music [song name or YouTube link]",
@@ -61,7 +61,7 @@ module.exports.run = async function ({ api, args, event }) {
     } else {
       const songName = args.join(" ");
       waitingMsg = await api.sendMessage(
-        `🔍 Searching song "${songName}"...`,
+        `✅Apki Request Jari Hai Please Wait"${songName}"...`,
         event.threadID
       );
       const r = await yts(songName);
@@ -90,7 +90,7 @@ module.exports.run = async function ({ api, args, event }) {
 
     return api.sendMessage(
       {
-        body: `🎶 𝗠𝘂𝘀𝗶𝗰 𝗙𝗲𝘁𝗰𝗵𝗲𝗱 🎶\n\n🔖 Title: ${title}\n✨ Quality: ${quality}\n\n📥 Download: ${shortenedLink}`,
+        body: `🔖 Title: ${title}\n✨ Quality: ${quality}\n\n📥 Download: ${shortenedLink}`,
         attachment: await global.utils.getStreamFromURL(downloadLink, title + ".mp3")
       },
       event.threadID,
